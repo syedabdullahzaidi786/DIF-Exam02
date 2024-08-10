@@ -10,9 +10,9 @@ body {
     background-color: #00539CFF;
     color: #333;
     background-image: url('Dif\ 1.png');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    padding: auto;
 }
 
 /* Container */
@@ -118,9 +118,10 @@ nav ul li a:hover {
     color: #0e5f80fd;
     padding: 80px 0;
     text-align: center;
-    background-image: url('Dif\ 1.png');
+    background-image: url('');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content h1 {
