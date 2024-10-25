@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Add these styles to rule.css or in a <style> tag */
-
         /* Style for the card containing buttons */
         .start-exam-card {
             border: 2px solid #007BFF;
@@ -43,6 +42,33 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Camera feed card styles */
+        .camera-feed-card {
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #e9ecef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .camera-feed-card video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Webcam status colors */
+        .enabled {
+            color: green;
+        }
+
+        .disabled {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +81,7 @@
         <!-- Message Card -->
         <div class="message-card">
             <h2>Notifications</h2>
-            <p>Webcam Disabled!</p>
+            <p id="webcam-status" class="disabled">Webcam Disabled!</p>
             <p>Microphone Disabled!</p>
             <h3>AI Agent Monitoring Enabled!</h3>
         </div>
@@ -66,6 +92,12 @@
             <p><strong>Total Questions: 10</strong> <span id="user-id-display"></span></p>
             <p><strong>Time Duration: 10 Mints</strong> <span id="user-name-display"></span></p>
             <p><strong>Passcode: -</strong> <span id="user-name-display"></span></p>
+        </div>
+
+        <!-- Camera Feed Card -->
+        <div class="camera-feed-card">
+            <h2>Live Camera Feed</h2>
+            <video id="camera-view" autoplay muted></video>
         </div>
     </div>
     
@@ -115,6 +147,34 @@
         function startExam() {
             window.location.href = 'https://quizzory.in/id/66b281eba718b253df044b0c'; // Redirect to quiz.html
         }
+
+        async function accessCamera() {
+            const webcamStatus = document.getElementById("webcam-status");
+            const videoElement = document.getElementById("camera-view");
+            
+            try {
+                const videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                
+                // Show webcam enabled status
+                webcamStatus.textContent = "Webcam Enabled!";
+                webcamStatus.classList.remove("disabled");
+                webcamStatus.classList.add("enabled");
+                
+                // Display the live video stream
+                videoElement.srcObject = videoStream;
+            } catch (error) {
+                console.error("Camera access failed:", error);
+                // Display webcam disabled status
+                webcamStatus.textContent = "Webcam Disabled!";
+                webcamStatus.classList.remove("enabled");
+                webcamStatus.classList.add("disabled");
+            }
+        }
+        
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            accessCamera();
+        });
     </script>
 </body>
 </html>
