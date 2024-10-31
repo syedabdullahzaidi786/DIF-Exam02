@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Rules and Start</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="rules.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -176,7 +177,32 @@
             accessCamera();
         });
 
-        
+        // Disable right-click
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Disable Inspect Element (F12 and Ctrl+Shift+I)
+document.addEventListener('keydown', (event) => {
+    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+    }
+    // Disable "Ctrl+U" to prevent viewing source code
+    if (event.ctrlKey && event.key === 'u') {
+        event.preventDefault();
+    }
+});
+
+// Disable Print Screen
+document.addEventListener("keyup", function(event) {
+    if (event.key === "PrintScreen") {
+        navigator.clipboard.writeText("");
+        alert("Screenshots are disabled on this page.");
+    }
+});
+
+// Clear Clipboard continuously (prevents copying)
+setInterval(() => {
+    navigator.clipboard.writeText("");
+}, 300);
     </script>
 </body>
 </html>
