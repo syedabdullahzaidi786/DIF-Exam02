@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIF Exam</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="logo.png">
-    
+    <title>DIF Exam - Modern Online Testing Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         :root {
-            --primary-color: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary-color: #818cf8;
-            --accent-color: #4338ca;
+            --primary-color: #1e3a8a;
+            --secondary-color: #22c55e;
             --background-color: #f3f4f6;
             --text-color: #1f2937;
             --white: #ffffff;
@@ -25,7 +22,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -38,8 +35,7 @@
         }
 
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -58,10 +54,11 @@
             align-items: center;
             font-size: 1.5rem;
             font-weight: 700;
+            color: var(--primary-color);
         }
 
         .logo img {
-            height: 90px;
+            height: 80px;
             margin-right: 10px;
         }
 
@@ -71,26 +68,25 @@
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-color);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            background-image: url('Dif\ 1.png');
+            background: linear-gradient(135deg, var(--primary-color), #4338ca);
             color: var(--white);
-            padding: 4rem 0;
+            padding: 6rem 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
@@ -104,29 +100,61 @@
 
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--secondary-color);
             color: var(--white);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #15803d;
+        }
+
+        .countdown {
+            background-color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .countdown h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .countdown-label {
+            text-transform: uppercase;
+            color: var(--text-color);
         }
 
         .exam-sections {
-            padding: 4rem 0;
+            padding: 6rem 0;
+            background-color: var(--background-color);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             color: var(--primary-color);
         }
 
@@ -138,7 +166,7 @@
 
         .exam-card {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -149,12 +177,18 @@
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .exam-card-content {
-            padding: 1.5rem;
+        .exam-card img {
+            width: 80%;
+            height: 280px;
+            object-fit: cover;
         }
 
-        .exam-card h2 {
-            font-size: 1.5rem;
+        .exam-card-content {
+            padding: 2rem;
+        }
+
+        .exam-card h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
@@ -163,37 +197,37 @@
             margin-bottom: 1.5rem;
         }
 
-        .exam-card .button {
+        .button {
             display: inline-block;
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 0.6rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
 
-        .exam-card .button:hover {
-            background-color: var(--primary-dark);
+        .button:hover {
+            background-color: #1e40af;
         }
 
         .features {
             background-color: var(--white);
-            padding: 4rem 0;
+            padding: 6rem 0;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .feature-card {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background-color: var(--background-color);
-            border-radius: 10px;
+            border-radius: 15px;
             transition: all 0.3s ease;
         }
 
@@ -202,17 +236,99 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .feature-icon {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
         .feature-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
+        }
+
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--background-color);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
         }
 
         footer {
             background-color: var(--primary-color);
             color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding: 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #4338ca;
         }
 
         @media (max-width: 768px) {
@@ -221,12 +337,120 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
                 font-size: 1rem;
             }
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.2rem;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+        }
+
+        .login-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .login-button:hover {
+            background-color: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-button::before {
+            content: '\1F512';
+            font-size: 1.2rem;
+        }
+
+        .developers {
+            background-color: var(--background-color);
+            padding: 6rem 0;
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .developer-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .developer-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .developer-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-card p {
+            color: var(--text-color);
+        }
+
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            font-family: 'Font Awesome 5 Brands';
+            font-size: 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--secondary-color);
         }
     </style>
 </head>
@@ -240,8 +464,14 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#exams">Exams</a>
-                <a href="https://dif-portal.vercel.app">Portal</a>
+                <a href="#features">Features</a>
                 <a href="#contact">Contact</a>
+                <button id="notificationBtn" class="icon-button">
+                    <span class="icon">&#128276;</span>
+                    <span class="notification-badge">3</span>
+                </button>
+                <!-- <a href="https://dif-portal.vercel.app" class="login-button">Login to Portal</a> -->
+                <a href="Portal/login.html" class="login-button">Login to Portal</a>
             </div>
         </nav>
     </header>
@@ -249,27 +479,55 @@
     <main>
         <section class="hero" id="home">
             <div class="container">
-                <h1>Welcome to DIF Exam</h1>
-                <p>Empowering students with exclusive online exams tailored for academic excellence.</p>
-                <a href="https://dif-portal.vercel.app" class="cta-button">Portal</a>
+                <h1>Elevate Your Academic Journey</h1>
+                <p>Experience tailored online exams designed to challenge and empower students towards academic excellence.</p>
+                <a href="https://dif-portal.vercel.app" class="cta-button">Access Portal</a>
             </div>
         </section>
 
-        <section class="exam-sections container" id="exams">
-            <h2 class="section-title">Choose Your Exam</h2>
-            <div class="exam-grid">
-                <div class="exam-card">
-                    <div class="exam-card-content">
-                        <h2>For Boys</h2>
-                        <p>Access exams and resources tailored for male students.</p>
-                        <a href="boys_rules.html" class="button">Start Exam</a>
+        <section class="countdown">
+            <div class="container">
+                <h2>Next Exam Session Starts In</h2>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
                     </div>
                 </div>
-                <div class="exam-card">
-                    <div class="exam-card-content">
-                        <h2>For Girls</h2>
-                        <p>Access exams and resources tailored for female students.</p>
-                        <a href="girls_rules.html" class="button">Start Exam</a>
+            </div>
+        </section>
+
+        <section class="exam-sections" id="exams">
+            <div class="container">
+                <h2 class="section-title">Select Your Exam Path</h2>
+                <div class="exam-grid">
+                    <div class="exam-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4537/4537069.png" alt="Boys' Exam">
+                        <div class="exam-card-content">
+                            <h3>Boys' Exam Suite</h3>
+                            <p>Specialized exams and resources tailored for male students, focusing on their unique academic needs and challenges.</p>
+                            <a href="boys_rules.html" class="button">Begin Your Journey</a>
+                        </div>
+                    </div>
+                    <div class="exam-card">
+                        <img src="https://i.pinimg.com/564x/bc/47/8b/bc478b2b493cf66056797daa5575637b.jpg" alt="Girls' Exam">
+                        <div class="exam-card-content">
+                            <h3>Girls' Exam Suite</h3>
+                            <p>Curated exams and materials designed to empower female students, addressing specific educational goals and aspirations.</p>
+                            <a href="girls_rules.html" class="button">Start Your Path</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,33 +535,142 @@
 
         <section class="features" id="features">
             <div class="container">
-                <h2 class="section-title">Why Choose DIF Exam?</h2>
+                <h2 class="section-title">Why DIF Exam Stands Out</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h3>Tailored Content</h3>
-                        <p>Exams designed specifically for your academic needs</p>
+                        <div class="feature-icon">&#9889;</div>
+                        <h3>Personalized Content</h3>
+                        <p>Exams meticulously crafted to align with your specific academic requirements and goals.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Instant Results</h3>
-                        <p>Get your scores and feedback immediately after completion</p>
+                        <div class="feature-icon">&#128202;</div>
+                        <h3>Real-Time Results</h3>
+                        <p>Receive comprehensive scores and insightful feedback immediately upon exam completion.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Flexible Scheduling</h3>
-                        <p>Take your exams at a time that suits you best</p>
+                        <div class="feature-icon">&#128197;</div>
+                        <h3>Adaptive Scheduling</h3>
+                        <p>Enjoy the flexibility to take your exams at times that best fit your personal schedule and peak performance hours.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Students Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"DIF Exam has revolutionized my study habits. The adaptive learning feature helped me focus on my weak areas and improve significantly."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZEu88jjw5hNJ6DwaAQ-wV8CQez6X6ZCuLsQ&s" alt="John Doe">
+                            <div>
+                                <h4>Hayyan</h4>
+                                <p>8th Grade Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The instant feedback I receive after each exam has been invaluable. It's like having a personal tutor guiding me through my studies."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZEu88jjw5hNJ6DwaAQ-wV8CQez6X6ZCuLsQ&s" alt="Jane Smith">
+                            <div>
+                                <h4>Mugheerah</h4>
+                                <p>10th Grade Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="developers">
+            <div class="container">
+                <h2 class="section-title">Meet Our Developers Team</h2>
+                <div class="developers-grid">
+                    <div class="developer-card">
+                        <img src="./Developers_Pictures/my pic .jpg" alt="Ahmed Raza" class="developer-image">
+                        <h3>Syed Abdullah</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="./Developers_Pictures/rajab.png" alt="Sarah Johnson" class="developer-image">
+                        <h3>Rajab Raza</h3>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <!-- <div class="developer-card">
+                        <img src="michael-chen.jpg" alt="Michael Chen" class="developer-image">
+                        <h3>Michael Chen</h3>
+                        <p>Backend Developer</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
     </main>
-    <!-- <iframe src="https://quizzory.in/id/671a44eb2c76be146869b642" height="800px" width="600px">Loading...</iframe>
-    <iframe src="https://quizzory.in/id/671a44eb2c76be146869b642" height="800px" width="600px">Loading...</iframe> -->
 
     <footer id="contact">
         <div class="container">
-            <p>&copy; 2024 DIF Exam Web. All rights reserved.</p>
-            <p>Created by AR Developers</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About DIF Exam</h3>
+                    <p>DIF Exam is an innovative online platform dedicated to empowering students through personalized and adaptive learning experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#exams">Exams</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: darulimfoundation786@gmail.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <p>Address: B-165, Sector 35/A Zaman Town Sector 35 A Korangi, Karachi, Karachi City, Sindh 74900</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="" class="social-icon">&#xf09a;</a>
+                        <a href="#" class="social-icon">&#xf099;</a>
+                        <a href="#" class="social-icon">&#xf16d;</a>
+                        <a href="#" class="social-icon">&#xf0e1;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIF Exam Web. All rights reserved.</p>
+                <p>Crafted with excellence by AR Developers</p>
+            </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('2024-12-31T23:59:59').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
 </body>
 </html>
